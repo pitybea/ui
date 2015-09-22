@@ -4,11 +4,14 @@ $def with (cands)
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-    <title>北大日本校友会投票系统</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>we can rely on ourselves</title>
     <link rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="/static/first.css" />
     <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/first.css" />
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript">
       jQuery(document).ready(function() {
       jQuery("#vote").click(function() {
@@ -38,33 +41,43 @@ $def with (cands)
     </script>
 
   </head>
-  <body>
-    <div  style="display: none;">
-      <img src="/static/c.jpg"/>
-    </div>
-    <h1><font size="4">北京大学日本校友会2015校友大会网上投票系统</font></h1>
+  <body role='document'>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">投票系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">投票首页</a></li>
+            <li><a href="/query">状态查询</a></li>
+            <li><a href="/verify">投票验证</a></li>
+            <li><a href="/summary">投票汇总</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>参与投票，支持民主</h1>
+        <p>欢迎使用北京大学日本校友会2015校友大会网上投票系统，请投出您神圣的选票。</p>
+      </div>
+      <div class="">
+        <h2>
+          设置密码<small>请设置个人密码，并投票</small>
+        </h2>
+        <p>您所设置的密码将可用于验证投票的结果。</p>
+        <div class="input-group">
+          <input id="t1" type="text" class="form-control" value="" data-original-title="" title=""/>
+        </div>
+      </div>
     <table>
-      <tr>
-	<td>
-	  <span>请设置个人密码，并投票</span>
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  <input class="text" id="t1"/>
-	</td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-	<td>
-	  <input class="button" id="vote" type="submit" value="投票"/>    
-	</td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
       <tr>
 	<td>
 	  <div class="zxx_align_box_2">
@@ -82,25 +95,12 @@ $def with (cands)
 	</td>
       </tr>
     </table>
-    <table>
-      <tr> </tr> <tr> </tr>  <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr>
-	<td>其他功能：</td><td><a href="query">状态查询</a></td> <td><a href="summary">投票汇总</a></td>
-      </tr>
-    </table>
-    <table>
-      <tr> </tr> <tr> </tr>  <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>           
-      <tr>
-	<td><font size="2">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</font></td>
-      </tr>
-    </table>
+      <div id=""><input type="submit" value="投票" id="vote" class="btn btn-primary" data-original-title="" title=""></div>
+    </div>
+    <footer class="footer">
+      <div class="container text-right">
+        <p class="text-muted">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</p>
+      </div>
+    </footer>
   </body>
 </html>
