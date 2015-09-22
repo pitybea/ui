@@ -1,0 +1,10 @@
+.zxx_align_box_2{
+    display:table-cell;
+    width:150px;
+    vertical-align:middle;
+}
+.zxx_align_box_2 span.zxx_align_word{
+    display:inline-block;
+    font-size:1em;
+    vertical-align:middle;
+}

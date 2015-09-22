@@ -1,0 +1,90 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>administration</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/static/first.css" />
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+      jQuery("#verify").click(function() {
+      var i_str = jQuery('#t1').val();
+      var j_str = jQuery('#t2').val();
+      var k_str = jQuery('#t3').val();
+      <!--console.log(input_string);-->
+      var p_obj = new Object();
+      p_obj.i_str=i_str;
+      p_obj.j_str=j_str;
+      p_obj.k_str=k_str;
+      jQuery.ajax({
+      type: "POST",
+      data: JSON.stringify(p_obj),
+      success: function(data) {
+      <!--if(jQuery("#c1").attr('checked'))-->
+      jQuery('#foo').html(data);
+
+      },
+      });
+      return false;
+      });
+      });
+      
+    </script>
+
+  </head>
+  <body>
+    <h1><font size="4">投票验证</font></h1>
+    <table>
+      <tr>
+	  <span>请输入管理员密码，要验证id，以及备注</span>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr>
+	<td><span>管理员密码</span></td>
+	<td><input class="text" id="t1"/></td>
+      </tr>
+      <tr>
+	<td><span>被验证id</span></td>
+	<td><input class="text" id="t2"/></td>
+      </tr>
+      <tr>
+	<td><span>备注（校友实名信息）</span></td>
+	<td><input class="text" id="t3"/></td>
+      </tr>
+
+      <tr>
+	<td>
+	  <input class="button" id="verify" type="submit" value="投票验证"/>    
+	</td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr>
+      </tr>
+    </table>
+    <table>
+      <tr>
+	<td>
+	  <div class="zxx_align_box_2">
+	    <span id="foo" class="zxx_align_word"></span>
+	  </div>
+	</td>
+      </tr>
+      <tr> </tr> <tr> </tr>  <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>           
+      <tr>
+	<td><font size="2">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</font></td>
+      </tr>
+    </table>
+  </body>
+</html>

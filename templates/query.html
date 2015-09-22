@@ -1,0 +1,82 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>投票查询</title>
+    <link rel="stylesheet" type="text/css" href="/static/first.css" />
+    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+      jQuery("#query").click(function() {
+      var i_string = jQuery('#t1').val();
+      
+      <!--console.log(input_string);-->
+      var p_obj = new Object();
+      p_obj.i_str=i_string;
+      jQuery.ajax({
+      type: "POST",
+      data: JSON.stringify(p_obj),
+      success: function(data) {
+      <!--if(jQuery("#c1").attr('checked'))-->
+      jQuery('#foo').html(data);
+
+      },
+      });
+      return false;
+      });
+      });
+      
+    </script>
+
+  </head>
+  <body>
+    <h1><font size="4">北京大学日本校友会2015校友大会网上投票系统</font></h1>
+    <table>
+      <tr>
+	<td>
+	  <span>请使用个人密码，查询投票情况</span>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <input class="text" id="t1"/>
+	</td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+      <tr>
+	<td>
+	  <input class="button" id="query" type="submit" value="查询"/>    
+	</td>
+      </tr>
+      
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr>
+	<td>
+	  <div class="zxx_align_box_2">
+	    <span id="foo" class="zxx_align_word"></span>
+	  </div>
+	</td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>      
+    </table>
+    <table>
+      <tr> </tr> <tr> </tr>  <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>           
+      <tr>
+	<td><font size="2">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</font></td>
+      </tr>
+    </table>
+  </body>
+</html>

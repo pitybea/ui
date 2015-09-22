@@ -1,0 +1,66 @@
+$def with (vs,cands)
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>投票公示</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+   
+  </head>
+  <body>
+    <h1><font size="4">北京大学日本校友会2015校友大会网上投票公示</font></h1>
+    <table>
+      <tr>
+	<td>
+	  <span><font size="4">投票情况</font></span>
+	</td>
+      </tr>
+      <tr></tr><tr></tr><tr></tr><tr></tr>
+      <tr>
+	<td>
+	  <span>公示查询 id          </span>
+	</td>
+	<td>
+	  <span>投票情况</span>
+	</td>
+      </tr>
+      $for cand in cands:
+      <tr>
+	  <td><span>$cand.not_key</span></td> <td><span>$cand.context</span></td>
+      </tr>
+ 
+    </table>
+    <table>
+      <tr> </tr> <tr> </tr>  <tr> </tr>      
+      <tr> </tr>      
+
+      <tr>
+	<td>
+	  <span><font size="4">投票成功校友名单</font></span>
+	</td>
+      </tr>
+      <tr></tr><tr></tr><tr></tr><tr></tr>
+      <tr>
+	<td>
+	  $for v in vs:
+	  <span>$v</span><BR>
+	</td>
+      </tr>
+      <tr> </tr> <tr> </tr>  <tr> </tr>      
+      <tr> </tr>      
+    </table>
+    <table>
+      <tr> </tr> <tr> </tr>  <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>      
+      <tr> </tr>           
+      <tr>
+	<td><font size="2">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</font></td>
+      </tr>
+    </table>
+  </body>
+</html>
