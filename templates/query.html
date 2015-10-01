@@ -1,71 +1,73 @@
-
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="import" href="./header.html">
+    <link href="./header.html" rel="import">
     <title>投票查询</title>
     <script type="text/javascript">
-      jQuery(document).ready(function() {
-      jQuery("#query").click(function() {
-      var i_string = jQuery('#t1').val();
-      
-      <!--console.log(input_string);-->
-      var p_obj = new Object();
-      p_obj.i_str=i_string;
-      jQuery.ajax({
-      type: "POST",
-      data: JSON.stringify(p_obj),
-      success: function(data) {
-      <!--if(jQuery("#c1").attr('checked'))-->
-      jQuery('#foo').html(data);
+      jQuery(document)
+        .ready(function() {
+          jQuery("#query")
+            .click(function() {
+              var i_string = jQuery('#t1').val();
 
-      },
-      });
-      return false;
-      });
-      });
-      
+              <!--console.log(input_string);-->
+              var p_obj = new Object();
+              p_obj.i_str = i_string;
+              jQuery.ajax({
+                type: "POST",
+                data: JSON.stringify(p_obj),
+                success: function(data) {
+                  <!--if(jQuery("#c1").attr('checked'))-->
+                  jQuery('#foo').html(data);
+
+                }
+              });
+              return false;
+            });
+        });
     </script>
 
   </head>
   <body>
     <nav data-include='nav.html'></nav>
     <div class="container theme-showcase" role="main">
-    <h1><font size="4">北京大学日本校友会2015校友大会网上投票系统</font></h1>
-    <table>
-      <tr>
-	<td>
-	  <span>请使用个人密码，查询投票情况</span>
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  <input class="text" id="t1"/>
-	</td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-	<td>
-	  <input class="button" id="query" type="submit" value="查询"/>    
-	</td>
-      </tr>
-      
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-	<td>
-	  <div class="zxx_align_box_2">
-	    <span id="foo" class="zxx_align_word"></span>
-	  </div>
-	</td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>      
-    </table>
+      <h1>
+        <font size="4">北京大学日本校友会2015校友大会网上投票系统</font>
+      </h1>
+      <table>
+        <tr>
+          <td>
+            <span>请使用个人密码，查询投票情况</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="text" id="t1"/>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td>
+            <input class="button" id="query" type="submit" value="查询"/>
+          </td>
+        </tr>
+
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td>
+            <div class="zxx_align_box_2">
+              <span class="zxx_align_word" id="foo"></span>
+            </div>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+      </table>
     </div>
     <footer data-include='footer.html'></footer>
   </body>

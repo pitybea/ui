@@ -1,73 +1,78 @@
-
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="import" href="./header.html">
+    <link href="./header.html" rel="import">
     <title>administration</title>
     <script type="text/javascript">
-      jQuery(document).ready(function() {
-      jQuery("#apply").click(function() {
-      var i_str = jQuery('#t1').val();
-      var j_str = jQuery('#t2').val();
-      <!--console.log(input_string);-->
-      var p_obj = new Object();
-      p_obj.i_str=i_str;
-      p_obj.j_str=j_str;
-      jQuery.ajax({
-      type: "POST",
-      data: JSON.stringify(p_obj),
-      success: function(data) {
-      <!--if(jQuery("#c1").attr('checked'))-->
-      jQuery('#foo').html(data);
+      jQuery(document)
+        .ready(function() {
+          jQuery("#apply")
+            .click(function() {
+              var i_str = jQuery('#t1').val();
+              var j_str = jQuery('#t2').val();
+              <!--console.log(input_string);-->
+              var p_obj = new Object();
+              p_obj.i_str = i_str;
+              p_obj.j_str = j_str;
+              jQuery.ajax({
+                type: "POST",
+                data: JSON.stringify(p_obj),
+                success: function(data) {
+                  <!--if(jQuery("#c1").attr('checked'))-->
+                  jQuery('#foo').html(data);
 
-      },
-      });
-      return false;
-      });
-      });
-      
+                }
+              });
+              return false;
+            });
+        });
     </script>
 
   </head>
   <body>
     <nav data-include='nav.html'></nav>
     <div class="container theme-showcase" role="main">
-    <h1><font size="4">管理员申请</font></h1>
-    <table>
-      <tr>
-	  <span>请设置个人密码，并申请，请不要向任何人泄漏此密码</span>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-	<td><span>个人密码</span></td>
-	<td><input class="text" id="t1"/></td>
-      </tr>
-      <tr>
-	<td><span>昵称</span></td>
-	<td><input class="text" id="t2"/></td>
-      </tr>
-      <tr>
-	<td>
-	  <input class="button" id="apply" type="submit" value="管理员申请"/>    
-	</td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-      </tr>
-    </table>
-    <table>
-      <tr>
-	<td>
-	  <div class="zxx_align_box_2">
-	    <span id="foo" class="zxx_align_word"></span>
-	  </div>
-	</td>
-      </tr>
-    </table>
+      <h1>
+        <font size="4">管理员申请</font>
+      </h1>
+      <table>
+        <tr>
+          <span>请设置个人密码，并申请，请不要向任何人泄漏此密码</span>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td>
+            <span>个人密码</span>
+          </td>
+          <td><input class="text" id="t1"/></td>
+        </tr>
+        <tr>
+          <td>
+            <span>昵称</span>
+          </td>
+          <td><input class="text" id="t2"/></td>
+        </tr>
+        <tr>
+          <td>
+            <input class="button" id="apply" type="submit" value="管理员申请"/>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="zxx_align_box_2">
+              <span class="zxx_align_word" id="foo"></span>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
     <footer data-include='footer.html'></footer>
   </body>

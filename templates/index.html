@@ -3,33 +3,36 @@ $def with (cands)
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="import" href="./header.html">
+    <link href="./header.html" rel="import">
     <script type="text/javascript">
-      jQuery(document).ready(function() {
-      jQuery("#vote").click(function() {
-      var i_string = jQuery('#t1').val();
-      
-      <!--console.log(input_string);-->
-      var values = new Array();
-      $$("input[@name='user_group[]']:checked").each(function() {
-      values.push($$(this).attr('value'));
-      <!--console.log(input_string);-->
-      });
-      var p_obj = new Object();
-      p_obj.i_string=i_string;
-      p_obj.values=values;
-      jQuery.ajax({
-      type: "POST",
-      data: JSON.stringify(p_obj),
-      success: function(data) {
-      <!--if(jQuery("#c1").attr('checked'))-->
-      jQuery('#foo').html(data);
+      jQuery(document)
+        .ready(function() {
+          jQuery("#vote")
+            .click(function() {
+              var i_string = jQuery('#t1').val();
 
-      },
-      });
-      return false;
-      });
-      });
+              <!--console.log(input_string);-->
+              var values = new Array();
+              $$("input[@name='user_group[]']:checked")
+                .each(function() {
+                  values.push($$(this).attr('value'));
+                  <!--console.log(input_string);-->
+                });
+              var p_obj = new Object();
+              p_obj.i_string = i_string;
+              p_obj.values = values;
+              jQuery.ajax({
+                type: "POST",
+                data: JSON.stringify(p_obj),
+                success: function(data) {
+                  <!--if(jQuery("#c1").attr('checked'))-->
+                  jQuery('#foo').html(data);
+
+                }
+              });
+              return false;
+            });
+        });
     </script>
 
   </head>
@@ -37,29 +40,30 @@ $def with (cands)
     <nav data-include='nav.html'></nav>
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-        <h1>参与投票，支持民主</h1>
-        <p>欢迎使用北京大学日本校友会2015校友大会网上投票系统，请投出您神圣的选票。</p>
+        <h1>???�????�?�???????�?�?</h1>
+        <p>欢�??使�?????�?大�????��????��??�?2015??��??大�??�?�????�?系�??�?请�????��??�???��?????�????</p>
       </div>
       <div class="">
         <h2>
-          设置密码<small>请设置个人密码，并投票</small>
+          设置�????
+          <small>请�?�置�?人�?????�?并�??�?</small>
         </h2>
-        <p>您所设置的密码将可用于验证投票的结果。</p>
+        <p>??????设置???�????�???????�?�?�????�????�???????</p>
         <div class="input-group">
-          <input id="t1" type="text" class="form-control" value="" data-original-title="" title=""/>
+          <input class="form-control" data-original-title="" id="t1" title="" type="text" value=""/>
         </div>
         <div class="zxx_align_box_2">
-          <span id="foo" class="zxx_align_word"></span>
+          <span class="zxx_align_word" id="foo"></span>
         </div>
       </div>
       <ul class="list-unstyled">
         $for cand in cands:
         <li>
-          <input type="checkbox"  name="candidates" value=$cand.id>$cand.name<BR>
-        </li>
-      </ul>
-      <div id=""><input type="submit" value="投票" id="vote" class="btn btn-primary" data-original-title="" title=""></div>
-    </div>
-    <footer data-include='footer.html'></footer>
-  </body>
-</html>
+          <input name="candidates" type="checkbox" value=$cand.id>$cand.name
+          <BR></li>
+        </ul>
+        <div id=""><input class="btn btn-primary" data-original-title="" id="vote" title="" type="submit" value="???�?"></div>
+      </div>
+      <footer data-include='footer.html'></footer>
+    </body>
+  </html>
