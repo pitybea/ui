@@ -9,21 +9,9 @@ $def with (vs,cands)
   <body>
     <nav data-include='nav.html'></nav>
     <div class="container theme-showcase" role="main">
-      <h1>
-        <font size="4">北京大学日本校友会2015校友大会网上投票公示</font>
-      </h1>
-      <table>
-        <tr>
-          <td>
-            <span>
-              <font size="4">投票情况</font>
-            </span>
-          </td>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
+      <h1>北京大学日本校友会2015校友大会网上投票公示</h1>
+      <h2>投票情况</h2>
+      <table class="table table-striped table-hover">
         <tr>
           <td>
             <span>公示查询 id
@@ -44,35 +32,12 @@ $def with (vs,cands)
         </tr>
 
       </table>
-      <table>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-
-        <tr>
-          <td>
-            <span>
-              <font size="4">投票成功校友名单</font>
-            </span>
-          </td>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr>
-          <td>
-            $for v in vs:
-            <span>$v</span>
-            <BR></td>
-          </tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-        </table>
-      </div>
-      <footer data-include='footer.html'></footer>
-    </body>
-  </html>
+      <h3>投票成功校友名单</h3>
+      <ul class="list-unstyled">
+        $for v in vs:
+        <li>$v</li>
+      </ul>
+    </div>
+    <footer data-include='footer.html'></footer>
+  </body>
+</html>

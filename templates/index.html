@@ -40,30 +40,33 @@ $def with (cands)
     <nav data-include='nav.html'></nav>
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-        <h1>???�????�?�???????�?�?</h1>
-        <p>欢�??使�?????�?大�????��????��??�?2015??��??大�??�?�????�?系�??�?请�????��??�???��?????�????</p>
+        <h1>参与投票，支持民主</h1>
+        <p>欢迎使用北京大学日本校友会2015校友大会网上投票系统，请投出您神圣的选票。</p>
       </div>
       <div class="">
         <h2>
-          设置�????
-          <small>请�?�置�?人�?????�?并�??�?</small>
+          设置密码
+          <small>请设置个人密码，并投票</small>
         </h2>
-        <p>??????设置???�????�???????�?�?�????�????�???????</p>
-        <div class="input-group">
-          <input class="form-control" data-original-title="" id="t1" title="" type="text" value=""/>
+        <form>
+          <div class="form-group">
+              <input class="form-control" data-original-title="" id="t1" placeholder="您所设置的密码将可用于验证投票的结果。" title="" type="text" value=""/>
+            <div class="zxx_align_box_2">
+              <span class="zxx_align_word" id="foo"></span>
+            </div>
+          </div>
+          <ul class="list-unstyled">
+            $for cand in cands:
+            <li>
+              <label>
+                <input name="candidates" type="checkbox" value=$cand.id>$cand.name
+              </label>
+            </li>
+          </ul>
+          <div id=""><input class="btn btn-primary" data-original-title="" id="vote" title="" type="submit" value="投票"></div>
         </div>
-        <div class="zxx_align_box_2">
-          <span class="zxx_align_word" id="foo"></span>
-        </div>
-      </div>
-      <ul class="list-unstyled">
-        $for cand in cands:
-        <li>
-          <input name="candidates" type="checkbox" value=$cand.id>$cand.name
-          <BR></li>
-        </ul>
-        <div id=""><input class="btn btn-primary" data-original-title="" id="vote" title="" type="submit" value="???�?"></div>
-      </div>
-      <footer data-include='footer.html'></footer>
-    </body>
-  </html>
+      </form>
+    </div>
+    <footer data-include='footer.html'></footer>
+  </body>
+</html>
