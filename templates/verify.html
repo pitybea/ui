@@ -2,12 +2,8 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <link rel="import" href="./header.html">
     <title>administration</title>
-
-    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="/static/first.css" />
-    <script type="text/javascript" src="/static/jquery.js"></script>
     <script type="text/javascript">
       jQuery(document).ready(function() {
       jQuery("#verify").click(function() {
@@ -36,6 +32,8 @@
 
   </head>
   <body>
+    <nav data-include='nav.html'></nav>
+    <div class="container theme-showcase" role="main">
     <h1><font size="4">投票验证</font></h1>
     <table>
       <tr>
@@ -62,29 +60,11 @@
 	  <input class="button" id="verify" type="submit" value="投票验证"/>    
 	</td>
       </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-      </tr>
     </table>
-    <table>
-      <tr>
-	<td>
-	  <div class="zxx_align_box_2">
-	    <span id="foo" class="zxx_align_word"></span>
-	  </div>
-	</td>
-      </tr>
-      <tr> </tr> <tr> </tr>  <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>      
-      <tr> </tr>           
-      <tr>
-	<td><font size="2">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</font></td>
-      </tr>
-    </table>
+      <div class="zxx_align_box_2">
+        <span id="foo" class="zxx_align_word"></span>
+      </div>
+    </div>
+    <footer data-include='footer.html'></footer>
   </body>
 </html>

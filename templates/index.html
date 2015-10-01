@@ -3,16 +3,7 @@ $def with (cands)
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>we can rely on ourselves</title>
-    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="/static/first.css" />
-    <script type="text/javascript" src="/static/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/first.css" />
-    <link rel="stylesheet" href="../static/bootstrap.min.css">
-    <script type="text/javascript" src="../static/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/bootstrap.min.js"></script>
+    <link rel="import" href="./header.html">
     <script type="text/javascript">
       jQuery(document).ready(function() {
       jQuery("#vote").click(function() {
@@ -43,27 +34,7 @@ $def with (cands)
 
   </head>
   <body role='document'>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">投票系统</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">投票首页</a></li>
-            <li><a href="/query">状态查询</a></li>
-            <li><a href="/verify">投票验证</a></li>
-            <li><a href="/summary">投票汇总</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <nav data-include='nav.html'></nav>
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
         <h1>参与投票，支持民主</h1>
@@ -89,10 +60,6 @@ $def with (cands)
       </ul>
       <div id=""><input type="submit" value="投票" id="vote" class="btn btn-primary" data-original-title="" title=""></div>
     </div>
-    <footer class="footer">
-      <div class="container text-right">
-        <p class="text-muted">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</p>
-      </div>
-    </footer>
+    <footer data-include='footer.html'></footer>
   </body>
 </html>
