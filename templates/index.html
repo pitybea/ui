@@ -19,10 +19,10 @@ $def with (cands)
               var i_string = jQuery('#t1').val();
 
               <!--console.log(input_string);-->
-              var values = new Array();
-              $$("input[@name='user_group[]']:checked")
+              var values = [];
+              $("input[name='candidates']:checked")
                 .each(function() {
-                  values.push($$(this).attr('value'));
+                  values.push($(this).attr('value'));
                   <!--console.log(input_string);-->
                 });
               var p_obj = new Object();
