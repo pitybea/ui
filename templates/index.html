@@ -3,7 +3,14 @@ $def with (cands)
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link href="/static/header.html" rel="import">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>北大日本校友会投票系统</title>
+    <link charset="utf-8" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/first.css" rel="stylesheet" type="text/css"/>
+    <script src="/static/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       jQuery(document)
         .ready(function() {
@@ -37,7 +44,36 @@ $def with (cands)
 
   </head>
   <body role='document'>
-    <nav data-include='/static/nav.html'></nav>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index">投票系统</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/index">投票首页</a>
+            </li>
+            <li>
+              <a href="/query">状态查询</a>
+            </li>
+            <li>
+              <a href="/verify">投票验证</a>
+            </li>
+            <li>
+              <a href="/summary">投票汇总</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
         <h1>参与投票，支持民主</h1>
@@ -50,7 +86,7 @@ $def with (cands)
         </h2>
         <form>
           <div class="form-group">
-              <input class="form-control" data-original-title="" id="t1" placeholder="您所设置的密码将可用于验证投票的结果。" title="" type="text" value=""/>
+            <input class="form-control" data-original-title="" id="t1" placeholder="您所设置的密码将可用于验证投票的结果。" title="" type="text" value=""/>
             <div class="zxx_align_box_2">
               <span class="zxx_align_word" id="foo"></span>
             </div>
@@ -67,6 +103,10 @@ $def with (cands)
         </div>
       </form>
     </div>
-    <footer data-include='/static/footer.html'></footer>
+    <footer class="footer">
+      <div class="container text-right">
+        <p class="text-muted">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</p>
+      </div>
+    </footer>
   </body>
 </html>
