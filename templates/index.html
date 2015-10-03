@@ -20,7 +20,7 @@ $def with (cands)
 
               <!--console.log(input_string);-->
               var values = new Array();
-              $("input[@name='user_group[]']:checked")
+              $$("input[@name='user_group[]']:checked")
                 .each(function() {
                   values.push($$(this).attr('value'));
                   <!--console.log(input_string);-->
