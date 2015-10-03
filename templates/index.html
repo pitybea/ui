@@ -20,9 +20,9 @@ $def with (cands)
 
               <!--console.log(input_string);-->
               var values = [];
-              $("input[name='candidates']:checked")
+              $$("input[name='candidates[]']:checked")
                 .each(function() {
-                  values.push($(this).attr('value'));
+                  values.push($$(this).attr('value'));
                   <!--console.log(input_string);-->
                 });
               var p_obj = new Object();
