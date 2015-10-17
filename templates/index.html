@@ -1,4 +1,4 @@
-$def with (cands,mon)
+$def with (cands1,cands2,cands3,mon)
 
 <!DOCTYPE HTML>
 <html>
@@ -76,8 +76,7 @@ $def with (cands,mon)
     </nav>
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-        <h1>参与投票，支持民主</h1>
-        <p>北京大学日本校友会2015校友大会网上投票系统。</p>
+        <p>北大日本校友会2015校友大会网上投票</p>
       </div>
       <div class="">
         <h2>
@@ -91,16 +90,42 @@ $def with (cands,mon)
               <span class="zxx_align_word" id="foo"></span>
             </div>
           </div>
-          <h3>理事候选</h3>	  
-          <ul class="list-unstyled">
-            $for cand in cands:
-            <li>
-              <label>
-                <input name="candidates" type="checkbox" value=$cand.id>$cand.name
-              </label>
-            </li>
-          </ul>
-	  <h3>监事候选</h3>
+          <p>理事候选</p>	  
+	  <table>
+	    <tr>
+	      <td>
+		<ul class="list-unstyled">
+		  $for cand in cands1:
+		  <li>
+		    <label>
+                      <input name="candidates" type="checkbox" value=$cand.id>$cand.name
+		    </label>
+		  </li>
+		</ul>
+	      </td>
+	      <td>
+		<ul class="list-unstyled">
+		  $for cand in cands2:
+		  <li>
+		    <label>
+                      <input name="candidates" type="checkbox" value=$cand.id>$cand.name
+		    </label>
+		  </li>
+		</ul>
+	      </td>
+	      <td>
+		<ul class="list-unstyled">
+		  $for cand in cands3:
+		  <li>
+		    <label>
+                      <input name="candidates" type="checkbox" value=$cand.id>$cand.name
+		    </label>
+		  </li>
+		</ul>
+	      </td>
+	    </tr>
+	  </table>
+	  <p>监事候选</p>
 	  <ul class="list-unstyled">
             $for cand in mon:
             <li>
