@@ -1,4 +1,4 @@
-$def with (cands)
+$def with (cands,mon)
 
 <!DOCTYPE HTML>
 <html>
@@ -77,7 +77,7 @@ $def with (cands)
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
         <h1>参与投票，支持民主</h1>
-        <p>欢迎使用北京大学日本校友会2015校友大会网上投票系统，请投出您神圣的选票。</p>
+        <p>北京大学日本校友会2015校友大会网上投票系统。</p>
       </div>
       <div class="">
         <h2>
@@ -91,6 +91,7 @@ $def with (cands)
               <span class="zxx_align_word" id="foo"></span>
             </div>
           </div>
+          <h3>理事候选</h3>	  
           <ul class="list-unstyled">
             $for cand in cands:
             <li>
@@ -99,13 +100,23 @@ $def with (cands)
               </label>
             </li>
           </ul>
+	  <h3>监事候选</h3>
+	  <ul class="list-unstyled">
+            $for cand in mon:
+            <li>
+              <label>
+                <input name="candidates" type="checkbox" value=$cand.id>$cand.name
+              </label>
+            </li>
+          </ul>
+
           <div id=""><button type="submit" class="btn btn-primary" id="vote">投票</button></div>
         </div>
       </form>
     </div>
     <footer class="footer">
       <div class="container text-right">
-        <p class="text-muted">参与投票，支持民主。本系统由王志鹏校友专为本次校友大会设计开发。</p>
+        <p class="text-muted">本系统由王志鹏校友专为本次校友大会设计开发。</p>
       </div>
     </footer>
   </body>
