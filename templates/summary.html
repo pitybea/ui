@@ -1,4 +1,4 @@
-$def with (vs,cands)
+$def with (vs,cands,vvs)
 
 <!DOCTYPE HTML>
 <html>
@@ -68,6 +68,27 @@ $def with (vs,cands)
         $for v in vs:
         <li>$v</li>
       </ul>
+      <h3>个人投票情况（仅在公示期间显示）</h3>
+      <table class="table table-striped table-hover">
+        <tr>
+          <td>
+            <span>公示查询 id
+            </span>
+          </td>
+          <td>
+            <span>投票情况</span>
+          </td>
+        </tr>
+        $for cand in vvs:
+        <tr>
+          <td>
+            <span>$cand.not_key</span>
+          </td>
+          <td>
+            <span>$cand.context</span>
+          </td>
+        </tr>
+      </table>
     </div>
     <footer class="footer">
       <div class="container text-right">
