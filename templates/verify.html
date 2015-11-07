@@ -13,17 +13,19 @@
   <title>administration</title>
   <script type="text/javascript">
     jQuery(document)
-      .ready(function() {
-        jQuery("#verify")
-          .click(function() {
-            var i_str = jQuery('#t1').val();
-            var j_str = jQuery('#t2').val();
-            var k_str = jQuery('#t3').val();
+    .ready(function() {
+    jQuery("#verify")
+    .click(function() {
+    var i_str = jQuery('#t1').val();
+    var j_str = jQuery('#t2').val();
+    var k_str = jQuery('#t3').val();
+    var l_str = jQuery('#t4').val();
             <!--console.log(input_string);-->
             var p_obj = new Object();
             p_obj.i_str = i_str;
             p_obj.j_str = j_str;
             p_obj.k_str = k_str;
+	    p_obj.l_str = l_str;
             jQuery.ajax({
               type: "POST",
               data: JSON.stringify(p_obj),
@@ -83,6 +85,10 @@
       <div class="form-group">
         <label for="t3">投票校友实名信息</label>
         <input type="text" class="form-control" id="t3">
+      </div>
+      <div class="form-group">
+        <label for="t4">投票校友备注</label>
+        <input type="text" class="form-control" id="t4">
       </div>
       <button type="submit" class="btn btn-primary" id="verify">投票验证</button>
       <div class="zxx_align_box_2">
